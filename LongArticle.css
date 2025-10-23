@@ -1,0 +1,87 @@
+/* Reset Defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and General Styling */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.8;
+  padding: 2rem;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+header h3 {
+  font-size: 1rem;
+  color: #555;
+  font-weight: normal;
+}
+
+/* Article Content */
+.article-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Paragraph Styling */
+.article-content p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  font-size: 1.05rem;
+}
+
+/* First letter larger */
+.article-content p::first-letter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* First line bold */
+.article-content p::first-line {
+  font-weight: bold;
+}
+
+/* Marked text (highlighted keywords) */
+mark {
+  background-color: #ffe08a;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+/* Blockquote Styling */
+blockquote {
+  font-style: italic;
+  background-color: #f0f4f8;
+  border-left: 5px solid #3498db;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  color: #2c3e50;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+}

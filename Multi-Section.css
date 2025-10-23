@@ -1,0 +1,100 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #2c3e50;
+  padding: 1em 2em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Section Base Styling */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4em 10%;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Overview Section (Linear Gradient) */
+.overview {
+  background: linear-gradient(120deg, #f39c12, #e74c3c);
+  color: white;
+}
+
+/* Landmarks Section (Parallax Effect) */
+.landmarks {
+  background: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34') center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+/* Culture Section (Radial Gradient) */
+.culture {
+  background: radial-gradient(circle at center, #16a085, #0e6655);
+}
+
+/* Food Section (Parallax Effect with Image) */
+.food {
+  background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+/* Section Text */
+.content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.content p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  line-height: 1.8;
+}
+
+/* Footer */
+footer {
+  background-color: #2c3e50;
+  text-align: center;
+  padding: 1.2em;
+  font-size: 0.9rem;
+}

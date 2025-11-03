@@ -1,0 +1,150 @@
+/* Global Reset and Box-Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e1f5fe, #f3e5f5);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: #2196f3;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Section */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Card Layout */
+.card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  gap: 20px;
+}
+
+/* Card Image */
+.card-image img {
+  border-radius: 50%;
+  border: 4px solid #2196f3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.card-image img:hover {
+  transform: scale(1.1);
+}
+
+/* Form */
+.card-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 12px;
+}
+
+.card-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Input Fields */
+input {
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 6px rgba(33, 150, 243, 0.4);
+  outline: none;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary {
+  background-color: #2196f3;
+  color: white;
+}
+
+.secondary {
+  background-color: #9c27b0;
+  color: white;
+}
+
+/* Hover & Active Effects */
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #f1f1f1;
+  padding: 15px 0;
+  color: #555;
+  font-size: 14px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

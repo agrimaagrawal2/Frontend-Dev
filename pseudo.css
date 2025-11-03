@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.example {
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.example:hover {
+  transform: translateY(-5px);
+}
+
+/* :hover example */
+.hover-link {
+  display: inline-block;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.hover-link:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-bottom: 2px solid #0056b3;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* :focus example */
+.focus-input {
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.focus-input:focus {
+  border-color: #28a745;
+  background-color: #eaffea;
+}
+
+/* :active example */
+.active-btn {
+  background-color: #f39c12;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.active-btn:active {
+  background-color: #d35400;
+}
+
+/* :nth-child() example */
+.color-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.color-list li {
+  padding: 8px;
+  margin: 5px 0;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+}
+
+/* Apply different colors using nth-child */
+.color-list li:nth-child(odd) {
+  background-color: #d1f7c4;
+}
+
+.color-list li:nth-child(even) {
+  background-color: #a3d8f4;
+}

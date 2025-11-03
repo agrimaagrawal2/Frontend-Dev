@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Practice Page</title>
+  <link rel="stylesheet" href="selectors.css">
+</head>
+<body>
+  <header>
+    <h1>CSS Selectors Practice Page</h1>
+    <p>Learn how different types of CSS selectors work in a web page.</p>
+  </header>
+
+  <main>
+    <!-- Element Selector Example -->
+    <section>
+      <h2>1️⃣ Element Selector</h2>
+      <p>This paragraph is styled using an <strong>element selector</strong> — it targets all &lt;p&gt; tags.</p>
+      <p>Every paragraph on this page shares this same style.</p>
+    </section>
+
+    <!-- Class Selector Example -->
+    <section>
+      <h2>2️⃣ Class Selector</h2>
+      <p class="highlight">This paragraph uses the <code>.highlight</code> class to change its background color.</p>
+      <p class="highlight">Classes can be reused across multiple elements.</p>
+    </section>
+
+    <!-- ID Selector Example -->
+    <section>
+      <h2>3️⃣ ID Selector</h2>
+      <p id="special">This paragraph has a unique ID <code>#special</code> and a distinct style.</p>
+    </section>
+
+    <!-- Attribute Selector Example -->
+    <section>
+      <h2>4️⃣ Attribute Selector</h2>
+      <a href="https://example.com" target="_blank">External Link (opens in new tab)</a><br>
+      <a href="/about.html">Internal Link</a><br>
+      <input type="text" placeholder="Type something...">
+    </section>
+
+    <!-- Combinator Selectors Example -->
+    <section>
+      <h2>5️⃣ Combinator Selectors</h2>
+      <div class="combinator-demo">
+        <p>Paragraph inside a div (descendant selector).</p>
+        <p>Another paragraph inside the same div.</p>
+      </div>
+      <p>This paragraph is right after the div (adjacent sibling selector).</p>
+      <p>Another paragraph (general sibling selector applies too).</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CSS Selector Demo | Designed for Practice</p>
+  </footer>
+</body>
+</html>

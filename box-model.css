@@ -1,0 +1,107 @@
+/* =========================
+   Basic Page Setup
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #2c3e50;
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  margin-bottom: 40px;
+  color: #34495e;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   Flexbox Centering
+========================= */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+/* =========================
+   Box Model Demonstration
+========================= */
+.demo-section {
+  max-width: 400px;
+}
+
+/* Outer box area */
+.box {
+  width: 200px;
+  height: 200px;
+  margin: 30px auto;
+  border: 10px solid #2980b9;
+  padding: 30px;
+  background-color: #aed6f1;
+  outline: 4px dashed #7f8c8d;
+  position: relative;
+}
+
+/* Inner content area */
+.content {
+  background-color: #fef5e7;
+  border: 2px dashed #d35400;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* =========================
+   Default Box (content-box)
+========================= */
+.default-box {
+  box-sizing: content-box; /* Default behavior */
+}
+
+/* =========================
+   Border-Box Example
+========================= */
+.border-box {
+  box-sizing: border-box; /* Includes padding & border in total size */
+  background-color: #a3e4d7;
+  border-color: #16a085;
+}
+
+/* =========================
+   Descriptive Text
+========================= */
+.demo-section p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 10px;
+  background: #ecf0f1;
+  padding: 10px;
+  border-radius: 8px;
+  border-left: 5px solid #3498db;
+}
+
+/* =========================
+   Responsive Design
+========================= */
+@media (max-width: 768px) {
+  .container {
+    gap: 40px;
+  }
+
+  .box {
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+  }
+}

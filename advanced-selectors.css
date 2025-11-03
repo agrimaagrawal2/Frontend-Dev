@@ -1,0 +1,130 @@
+/* =======================
+   Base Styles
+======================= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f4f6f8;
+  color: #333;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+section {
+  margin: 40px 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+/* =======================
+   ATTRIBUTE SELECTORS
+======================= */
+
+/* Select input fields of type text */
+input[type="text"] {
+  border: 2px solid #3498db;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 6px;
+}
+
+/* Select links that start with 'https' */
+a[href^="https"] {
+  color: #27ae60;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* =======================
+   PSEUDO-CLASSES
+======================= */
+
+/* Change input border color on focus */
+input:focus {
+  border-color: #e67e22;
+  outline: none;
+}
+
+/* Change color on link hover */
+a:hover {
+  text-decoration: underline;
+  color: #e74c3c;
+}
+
+/* Style every odd list item using nth-child */
+.item-list li:nth-child(odd) {
+  background-color: #ecf0f1;
+}
+
+/* Style every even list item */
+.item-list li:nth-child(even) {
+  background-color: #dfe6e9;
+}
+
+/* =======================
+   PSEUDO-ELEMENTS
+======================= */
+
+/* Add content before list */
+.item-list::before {
+  content: "📋 Topics:";
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+/* Add a small arrow after each list item */
+.item-list li::after {
+  content: " ➜";
+  color: #2980b9;
+}
+
+/* =======================
+   COMBINATORS
+======================= */
+
+/* Descendant Selector — affects all inputs inside form */
+form input {
+  display: block;
+  margin: 10px auto;
+}
+
+/* Child Selector — targets direct h2 children of section only */
+section > h2 {
+  text-transform: uppercase;
+  color: #8e44ad;
+}
+
+/* Adjacent Sibling Selector — style <a> immediately after <p> */
+p + a {
+  background-color: #dfe6e9;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+/* General Sibling Selector — style all <a> that follow a <p> */
+p ~ a {
+  display: inline-block;
+  margin: 5px;
+}
+
+/* =======================
+   INTERACTION EFFECTS
+======================= */
+
+/* Smooth transitions */
+a, input {
+  transition: all 0.3s ease;
+}
+
+/* Hover on list items */
+.item-list li:hover {
+  transform: scale(1.05);
+  background-color: #b2bec3;
+}

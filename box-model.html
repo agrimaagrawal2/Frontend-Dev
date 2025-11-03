@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Model Exploration Page</title>
+  <link rel="stylesheet" href="box-model.css">
+</head>
+<body>
+  <header>
+    <h1>CSS Box Model Exploration</h1>
+  </header>
+
+  <main class="container">
+    <section class="demo-section">
+      <div class="box default-box">
+        <div class="content">Default Box (content-box)</div>
+      </div>
+      <p>This box uses the <strong>default box-sizing: content-box;</strong> property.  
+      The total size increases when padding and border are added.</p>
+    </section>
+
+    <section class="demo-section">
+      <div class="box border-box">
+        <div class="content">Border-Box Example</div>
+      </div>
+      <p>This box uses <strong>box-sizing: border-box;</strong>.  
+      The total width and height remain the same even with padding and border.</p>
+    </section>
+  </main>
+</body>
+</html>

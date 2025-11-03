@@ -1,0 +1,91 @@
+/* ======================
+   Basic Page Styling
+====================== */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 40px;
+  color: #2c3e50;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ======================
+   Flexbox Container
+====================== */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* ======================
+   Box Styling
+====================== */
+.box {
+  width: 150px;
+  text-align: center;
+}
+
+.shape {
+  width: 150px;
+  height: 150px;
+  background-color: #3498db;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+}
+
+/* ======================
+   Transformations
+====================== */
+
+/* Rotate on hover */
+.rotate .shape:hover {
+  transform: rotate(20deg);
+  background-color: #9b59b6;
+}
+
+/* Scale on hover */
+.scale .shape:hover {
+  transform: scale(1.3);
+  background-color: #27ae60;
+}
+
+/* Translate on hover */
+.translate .shape:hover {
+  transform: translate(20px, -15px);
+  background-color: #e67e22;
+}
+
+/* Skew on hover */
+.skew .shape:hover {
+  transform: skew(15deg, 10deg);
+  background-color: #e74c3c;
+}
+
+/* ======================
+   Labels
+====================== */
+.box p {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-top: 5px;
+}
+
+/* ======================
+   Responsive Design
+====================== */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

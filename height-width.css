@@ -1,0 +1,52 @@
+/* General Styling */
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ecf0f1;
+  font-family: Arial, sans-serif;
+}
+
+/* Flex Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+/* Common Box Styling */
+.box {
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: auto; /* Default to handle overflow text */
+}
+
+/* Box 1 — px units */
+.box1 {
+  background-color: #3498db;
+  width: 200px;
+  height: 100px;
+}
+
+/* Box 2 — % and vh units */
+.box2 {
+  background-color: #e67e22;
+  width: 40%;
+  height: 20vh;
+}
+
+/* Box 3 — em units with min/max size and overflow */
+.box3 {
+  background-color: #27ae60;
+  width: 20em;
+  min-height: 150px;
+  max-width: 300px;
+  overflow: auto;
+}

@@ -1,0 +1,103 @@
+/* ========================
+   Basic Page Setup
+======================== */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fb;
+  color: #2c3e50;
+  margin: 0;
+  padding: 40px;
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+}
+
+/* ========================
+   Header Styling
+======================== */
+header h1 {
+  text-align: center;
+  font-family: "Georgia", serif;
+  font-weight: 700;
+  color: #34495e;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ========================
+   Article Layout
+======================== */
+.article-container {
+  max-width: 800px;
+  margin: auto;
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* ========================
+   Heading and Paragraphs
+======================== */
+article h2 {
+  font-family: "Times New Roman", serif;
+  font-size: 1.8em;
+  text-align: center;
+  color: #2e4053;
+  margin-bottom: 25px;
+}
+
+article p {
+  font-size: 1em;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+/* ========================
+   Inline Text Styling
+======================== */
+mark {
+  background-color: #ffeaa7;
+  color: #2d3436;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+strong {
+  color: #e74c3c;
+  font-weight: 700;
+}
+
+em {
+  color: #2980b9;
+  font-style: italic;
+}
+
+/* ========================
+   Pseudo-elements
+======================== */
+
+/* First letter styling for emphasis */
+article p::first-letter {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #8e44ad;
+}
+
+/* First line styling for a visual guide */
+article p::first-line {
+  font-weight: 600;
+  color: #16a085;
+}
+
+/* ========================
+   Responsive Design
+======================== */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .article-container {
+    padding: 20px;
+  }
+}

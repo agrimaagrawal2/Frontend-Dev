@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  text-align: center;
+  padding: 30px;
+}
+
+.title {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #222;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+figure {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+figure:hover {
+  transform: scale(1.03);
+}
+
+img {
+  width: 100%;
+  display: block;
+  transition: filter 0.4s ease;
+}
+
+/* Apply Different Filters */
+.blur {
+  filter: blur(3px);
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.sepia {
+  filter: sepia(80%);
+}
+
+.brightness {
+  filter: brightness(0.6);
+}
+
+.contrast {
+  filter: contrast(180%);
+}
+
+.hue {
+  filter: hue-rotate(90deg);
+}
+
+/* Remove filter on hover */
+img:hover {
+  filter: none;
+}
+
+figcaption {
+  padding: 10px;
+  font-size: 1rem;
+  background: #fafafa;
+  color: #555;
+}
+
+/* Responsive: stack in one column below 600px */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

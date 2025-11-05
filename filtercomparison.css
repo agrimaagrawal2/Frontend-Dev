@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comparison-section {
+  max-width: 1000px;
+  width: 90%;
+  margin: auto;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  animation: fadeIn 1s ease-in;
+}
+
+figure {
+  flex: 1;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+figure:hover {
+  transform: translateY(-10px);
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: filter 0.5s ease;
+}
+
+/* Apply filter only on the "after" image */
+.after img {
+  filter: brightness(60%);
+}
+
+/* Remove filter on hover */
+.after img:hover {
+  filter: none;
+}
+
+figcaption {
+  padding: 10px;
+  font-size: 1rem;
+  background: #f1f1f1;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive layout: stack vertically below 700px */
+@media (max-width: 700px) {
+  .image-container {
+    flex-direction: column;
+  }
+}

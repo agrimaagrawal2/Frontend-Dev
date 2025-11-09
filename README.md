@@ -18,7 +18,7 @@
 
 ## 🌟 **Summary of My Journey (So Far)**
 
-Over the course of these eight days, I’ve built a strong foundation in **HTML**, **CSS**, and **Bootstrap**, learning how to transform simple static pages into responsive, visually appealing web layouts. I now understand how to structure content semantically, style it using modern CSS techniques, and create flexible designs that adapt beautifully across devices. Bootstrap introduced me to a faster, more efficient way to design professional UIs using its grid system and components.  
+Over the course,I’ve built a strong foundation in **HTML**, **CSS**, and **Bootstrap**, learning how to transform simple static pages into responsive, visually appealing web layouts. I now understand how to structure content semantically, style it using modern CSS techniques, and create flexible designs that adapt beautifully across devices. Bootstrap introduced me to a faster, more efficient way to design professional UIs using its grid system and components.  
 This phase of my journey strengthened my confidence as a front-end learner, preparing me to take the next big step — exploring **JavaScript** to bring interactivity and logic to my projects. 💻✨
 
 ---

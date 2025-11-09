@@ -1,0 +1,18 @@
+header{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+.tag{
+     display:flex;
+    justify-content:space-around;
+
+}
+.btn{
+    display:flex;
+    justify-content:space-around;
+}
+a{
+    text-decoration:none;
+    color:black;
+}

@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    justify-content: center;
+    display: flex;
+}
+
+.box{
+    height: 400px;
+    width: 400px;
+    background-color: lightblue;
+    margin-top: 170px;
+    border-radius: 20px;
+}
+
+.part1 {
+    margin-top: 20px;
+    margin-left: 90px;
+    font-size: 4em;
+    font-weight: 1000;
+}
+
+.part2 {
+    margin-top: 40px;
+    margin-left: 170px;
+    font-size: 5em;
+    margin-bottom: 20px;
+}
+
+.part3 {
+    margin-top: 100px;
+    margin-left: 37px;
+    font-weight: 1000;
+}
+
+button {
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.decrement{
+    background-color:  crimson;
+}
+
+.increment {
+    background-color: gainsboro;
+
+}
+
+.add {
+    background-color: lightblue;
+
+}

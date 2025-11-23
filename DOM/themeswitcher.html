@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Theme Switcher</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 25px;
+    transition: 0.3s ease;
+  }
+
+  /* Default Light Theme */
+  body.light {
+    background: #ffffff;
+    color: #000;
+  }
+
+  /* Dark Theme */
+  body.dark {
+    background: #1a1a1a;
+    color: #fff;
+  }
+
+  /* Blue Theme */
+  body.blue {
+    background: #0d6efd;
+    color: #fff;
+  }
+
+  button {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body data-theme="light" class="light">
+
+<h2>Theme Switcher (Light | Dark | Blue)</h2>
+<p>Click a button to change theme.</p>
+
+<button data-mode="light">Light</button>
+<button data-mode="dark">Dark</button>
+<button data-mode="blue">Blue</button>
+
+<script>
+  const buttons = document.querySelectorAll("button");
+  const body = document.body;
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const theme = btn.getAttribute("data-mode");
+
+      // Remove existing theme classes
+      body.classList.remove("light", "dark", "blue");
+
+      // Add new theme using setAttribute
+      body.setAttribute("class", theme);
+
+      // Save theme using custom attribute
+      body.setAttribute("data-theme", theme);
+    });
+  });
+</script>
+
+</body>
+</html>

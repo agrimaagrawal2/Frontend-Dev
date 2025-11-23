@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product List Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #f1f1f1;
+      padding: 8px;
+      margin: 6px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    input.edit-input {
+      width: 60%;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Dynamic Product List Manager</h2>
+  
+  <input type="text" id="productInput" placeholder="Enter product name">
+  <button id="addBtn">Add Product</button>
+
+  <ul id="productList"></ul>
+
+  <script>
+    const productInput = document.getElementById("productInput");
+    const productList = document.getElementById("productList");
+    let currentEdit = null;
+
+    // Add product
+    document.getElementById("addBtn").addEventListener("click", () => {
+      const name = productInput.value.trim();
+      if (name !== "") {
+        addProduct(name);
+        productInput.value = "";
+      }
+    });
+
+    function addProduct(name) {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <span class="name">${name}</span>
+        <div>
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+        </div>
+      `;
+      productList.appendChild(li);
+    }
+
+    // Event Delegation for Edit/Delete
+    productList.addEventListener("click", function(e) {
+      const li = e.target.closest("li");
+      if (!li) return;
+
+      // Delete product
+      if (e.target.classList.contains("delete")) {
+        li.remove();
+      }
+
+      // Edit product
+      if (e.target.classList.contains("edit")) {
+        startEditing(li);
+      }
+    });
+
+    // Start Edit
+    function startEditing(li) {
+      const nameSpan = li.querySelector(".name");
+      const oldValue = nameSpan.textContent;
+
+      // Prevent multiple edits at once
+      if (currentEdit) finishEditing(currentEdit);
+
+      nameSpan.innerHTML = `<input class="edit-input" value="${oldValue}" autofocus>`;
+      currentEdit = li;
+    }
+
+    // Finish Edit / Auto-Save
+    function finishEditing(li) {
+      const input = li.querySelector(".edit-input");
+      if (!input) return;
+
+      const newValue = input.value.trim();
+      li.querySelector(".name").textContent = newValue || "Unnamed Product";
+      currentEdit = null;
+    }
+
+    // Auto-save on click outside
+    document.addEventListener("click", function(e) {
+      if (currentEdit && !currentEdit.contains(e.target)) {
+        finishEditing(currentEdit);
+      }
+    });
+  </script>
+
+</body>
+</html>

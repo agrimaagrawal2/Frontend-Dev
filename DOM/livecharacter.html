@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Live Character Counter</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+  }
+
+  textarea {
+    width: 90%;
+    height: 120px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  #counter {
+    font-size: 18px;
+    margin-top: 8px;
+    font-weight: bold;
+  }
+
+  .yellow {
+    color: orange;
+  }
+
+  .red {
+    color: red;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+
+</head>
+<body>
+
+<h2>Live Character Counter</h2>
+
+<textarea id="textBox" placeholder="Start typing..."></textarea>
+<p id="counter">100 characters remaining</p>
+<button id="resetBtn">Reset</button>
+
+<script>
+  const textBox = document.getElementById("textBox");
+  const counter = document.getElementById("counter");
+
+  const maxChars = 100;
+
+  textBox.addEventListener("keydown", function(e) {
+    let currentLength = textBox.value.length;
+
+    // Prevent extra typing beyond limit
+    if (currentLength >= maxChars && e.key !== "Backspace" && e.key !== "Delete") {
+      e.preventDefault();
+    }
+  });
+
+  textBox.addEventListener("input", function() {
+    let remaining = maxChars - textBox.value.length;
+
+    counter.textContent = `${remaining} characters remaining`;
+
+    // Reset colors first
+    counter.className = "";
+
+    if (remaining <= 20 && remaining > 0) {
+      counter.classList.add("yellow");
+    } 
+    else if (remaining <= 0) {
+      counter.classList.add("red");
+    }
+  });
+
+  // RESET button behavior
+  document.getElementById("resetBtn").addEventListener("click", function() {
+    textBox.value = "";
+    counter.textContent = `${maxChars} characters remaining`;
+    counter.className = "";
+  });
+</script>
+
+</body>
+</html>

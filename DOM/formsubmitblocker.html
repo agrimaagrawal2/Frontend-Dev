@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    form {
+      width: 320px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+      display: none;
+    }
+
+    .success {
+      color: green;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      margin-bottom: 10px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Form Submit Blocker with Validation</h2>
+
+  <form id="myForm">
+    <label>Full Name</label>
+    <input type="text" id="name" />
+    <div id="nameError" class="error">Name is required.</div>
+
+    <label>Email</label>
+    <input type="text" id="email" />
+    <div id="emailError" class="error">Enter a valid email.</div>
+
+    <label>Password</label>
+    <input type="password" id="password" />
+    <div id="passError" class="error">Password must be at least 6 characters.</div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="successMsg" class="success"></div>
+
+  <script>
+    const form = document.getElementById("myForm");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const passInput = document.getElementById("password");
+
+    const successMsg = document.getElementById("successMsg");
+
+    form.addEventListener("submit", function (event) {
+      let isValid = true;
+
+      // Reset success message
+      successMsg.textContent = "";
+
+      // Validate Name
+      if (nameInput.value.trim() === "") {
+        document.getElementById("nameError").style.display = "block";
+        isValid = false;
+      }
+
+      // Validate Email
+      if (!emailInput.value.includes("@") || emailInput.value.trim() === "") {
+        document.getElementById("emailError").style.display = "block";
+        isValid = false;
+      }
+
+      // Validate Password
+      if (passInput.value.length < 6) {
+        document.getElementById("passError").style.display = "block";
+        isValid = false;
+      }
+
+      // Stop form submit if invalid
+      if (!isValid) {
+        event.preventDefault();
+      } else {
+        event.preventDefault(); // To show success without reloading
+        successMsg.textContent = "Form Submitted Successfully!";
+      }
+    });
+
+    // Live Error Removal
+    nameInput.addEventListener("input", () => {
+      if (nameInput.value.trim() !== "") {
+        document.getElementById("nameError").style.display = "none";
+      }
+    });
+
+    emailInput.addEventListener("input", () => {
+      if (emailInput.value.includes("@")) {
+        document.getElementById("emailError").style.display = "none";
+      }
+    });
+
+    passInput.addEventListener("input", () => {
+      if (passInput.value.length >= 6) {
+        document.getElementById("passError").style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

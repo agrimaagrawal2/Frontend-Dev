@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive FAQ</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 30px;
+        }
+
+        .faq-container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .faq {
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        .question {
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        /* 2. Hover effect */
+        .question:hover {
+            color: blue;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 8px;
+            color: #444;
+        }
+
+        /* Highlight when input focused */
+        .highlight {
+            background: #d1f7ff;
+        }
+
+        input {
+            margin-top: 5px;
+            width: 95%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align:center">FAQ Section</h2>
+
+<div class="faq-container">
+
+    <div class="faq">
+        <div class="question">What is HTML?</div>
+        <div class="answer">
+            HTML is a markup language for creating web pages.
+            <input type="text" placeholder="Your question here">
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="question">What is CSS?</div>
+        <div class="answer">
+            CSS is used for styling web pages.
+            <input type="text" placeholder="Your question here">
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="question">What is JavaScript?</div>
+        <div class="answer">
+            JavaScript makes websites interactive.
+            <input type="text" placeholder="Your question here">
+        </div>
+    </div>
+
+</div>
+
+<script src="interactiveFAQ.js"></script>
+
+</body>
+</html>

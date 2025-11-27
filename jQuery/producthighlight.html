@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Highlight</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            width: 200px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        /* 1. Highlight on click */
+        .highlight {
+            background: #d1f7d1;
+            border: 2px solid green;
+        }
+
+        /* 2. Hover to show details */
+        .details {
+            display: none;
+            font-size: 13px;
+            color: gray;
+            margin-top: 8px;
+        }
+
+        .product:hover .details {
+            display: block;
+        }
+
+        /* 3. Favorite Icon */
+        .favorite {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            color: gray;
+        }
+
+        .favorite.selected {
+            color: red;
+        }
+
+        /* 4. Products with discount */
+        .product[data-discount="true"] {
+            border: 2px dashed orange;
+            background: #fff7e6;
+        }
+
+        /* Out of stock appearance */
+        .product[data-stock="no"] {
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+<h2> Product List</h2>
+
+<div class="container">
+
+    <div class="product" data-stock="yes" data-discount="true">
+        <span class="favorite">♥</span>
+        <h4>Mobile Phone</h4>
+        <p class="discount">20% OFF</p>
+        <div class="details">128GB Storage, 6GB RAM</div>
+    </div>
+
+    <div class="product" data-stock="no" data-discount="false">
+        <span class="favorite">♥</span>
+        <h4>Headphones</h4>
+        <div class="details">Noise Cancellation</div>
+    </div>
+
+    <div class="product" data-stock="yes" data-discount="false">
+        <span class="favorite">♥</span>
+        <h4>Laptop</h4>
+        <div class="details">8GB RAM, 512GB SSD</div>
+    </div>
+
+</div>
+
+<script src="producthighlight.js"></script>
+
+</body>
+</html>

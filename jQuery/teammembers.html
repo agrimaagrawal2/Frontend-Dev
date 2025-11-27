@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Members Directory</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        .department {
+            background: #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .team {
+            margin-left: 20px;
+        }
+
+        .manager {
+            font-weight: bold;
+            cursor: pointer;
+            color: darkblue;
+        }
+
+        .employee {
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .contact {
+            display: none;
+            font-size: 12px;
+            color: gray;
+            margin-left: 40px;
+        }
+
+        /* Highlights */
+        .highlight {
+            background: yellow;
+        }
+
+        .deptHighlight {
+            background: lightblue;
+        }
+
+        .siblingHighlight {
+            background: lightgreen;
+        }
+
+        button {
+            margin: 10px 5px;
+            padding: 6px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            background: #007BFF;
+            color: white;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h2> Team Members Directory</h2>
+
+<button id="randomBtn">Highlight Siblings of Random Employee</button>
+<button id="toggleBtn">Collapse / Expand Team</button>
+
+<div class="department">
+    Sales Department
+
+    <div class="team">
+        <div class="manager">Manager: John</div>
+
+        <div class="employee">Alice</div>
+        <div class="contact"> alice@mail.com</div>
+
+        <div class="employee">Bob</div>
+        <div class="contact"> bob@mail.com</div>
+    </div>
+</div>
+
+<div class="department">
+    IT Department
+
+    <div class="team">
+        <div class="manager">Manager: Emma</div>
+
+        <div class="employee">David</div>
+        <div class="contact"> david@mail.com</div>
+
+        <div class="employee">Sophia</div>
+        <div class="contact"> sophia@mail.com</div>
+    </div>
+</div>
+
+<script src="teammembers.js"></script>
+</body>
+</html>

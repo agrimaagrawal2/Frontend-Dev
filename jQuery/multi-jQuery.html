@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi jQuery Widgets</title>
+
+    <!-- jQuery VERSION 1 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <!-- jQuery VERSION 2 -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dashboard {
+            width: 500px;
+            margin: auto;
+        }
+
+        .carousel {
+            background: #222;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .slide {
+            display: none;
+            font-size: 18px;
+        }
+
+        .active {
+            border: 3px solid lime;
+        }
+
+        .notification {
+            background: white;
+            padding: 10px;
+            border: 1px solid gray;
+            display: none;
+            margin: 10px;
+        }
+
+        .tooltip {
+            display: none;
+            background: black;
+            color: white;
+            padding: 5px;
+            position: absolute;
+            border-radius: 4px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 6px 10px;
+            border: none;
+            background: steelblue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: navy;
+        }
+    </style>
+</head>
+<body>
+
+<h2> Multi-jQuery Widgets</h2>
+
+<div class="dashboard">
+
+    <div class="carousel widget">
+        <div class="slide"> Slide 1</div>
+        <div class="slide"> Slide 2</div>
+        <div class="slide"> Slide 3</div>
+    </div>
+
+    <button id="notifyBtn">Show Notification</button>
+
+    <div class="notification widget">
+         New update available!
+    </div>
+
+    <br><br>
+
+    <button class="tip" data-tip="This controls the slider">Hover for Tooltip</button>
+
+</div>
+
+<div class="tooltip"></div>
+
+<script src="multi-jQuery.js"></script>
+
+</body>
+</html>

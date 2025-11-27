@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Blog Posts</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #adminPanel {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 500px;
+            margin: auto;
+        }
+
+        #adminPanel input {
+            width: 75%;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            margin: 6px;
+            padding: 6px 10px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .post {
+            background: #e8e8e8;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .featured {
+            background: gold;
+            font-weight: bold;
+        }
+
+        .tag {
+            color: white;
+            background: green;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin: 0 4px;
+        }
+
+        .highlight {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+<h2> Blog Admin Panel</h2>
+
+<div id="adminPanel">
+    <input type="text" id="postTitle" placeholder="Enter Post Title">
+    <br>
+    <input type="text" id="postTag" placeholder="Enter Tag (optional)">
+    <br>
+
+    <button id="addPost">Add New Post</button>
+    <button id="prependPost">Prepend Featured Post</button>
+    <button id="removePost">Remove Last Post</button>
+
+    <div id="posts">
+        <div class="post">Welcome to our Blog</div>
+        <div class="post">JavaScript Tips</div>
+        <div class="post">CSS Design Tricks</div>
+    </div>
+</div>
+
+<script src="dynamicblog.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Subscription Panel</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 30px;
+            text-align: center;
+        }
+
+        #panel {
+            width: 350px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .topic {
+            padding: 8px;
+            margin: 6px 0;
+            border-radius: 4px;
+            background: #eee;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .subscribed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .remove {
+            position: absolute;
+            right: 10px;
+            color: red;
+            cursor: pointer;
+        }
+
+        #newTopic {
+            width: 70%;
+            padding: 5px;
+        }
+
+        button {
+            margin-top: 8px;
+            padding: 6px 10px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .message {
+            margin-top: 12px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h2> Event Subscription Panel</h2>
+
+<div id="panel">
+
+    <div class="topic">News <span class="remove">✖</span></div>
+    <div class="topic">Offers <span class="remove">✖</span></div>
+    <div class="topic">Updates <span class="remove">✖</span></div>
+
+    <input type="text" id="newTopic" placeholder="New Topic">
+    <button id="addBtn">Add Topic</button>
+
+    <div id="messageBox"></div>
+</div>
+
+<script src="eventsubscription.js"></script>
+
+</body>
+</html>

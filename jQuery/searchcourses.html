@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Courses</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            padding: 30px;
+            text-align: center;
+        }
+
+        #searchBox {
+            width: 300px;
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        #count {
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .course-list {
+            max-width: 400px;
+            margin: auto;
+            padding: 0;
+        }
+
+        .course {
+            list-style: none;
+            background: white;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 6px 10px;
+            border: none;
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h2> Search Courses</h2>
+
+<input type="text" id="searchBox" placeholder="Search course...">
+<br><br>
+<button id="clearBtn">Clear Search</button>
+<div id="count"></div>
+
+<ul class="course-list">
+    <li class="course">HTML Basics</li>
+    <li class="course">CSS Fundamentals</li>
+    <li class="course">JavaScript Essentials</li>
+    <li class="course">React Development</li>
+    <li class="course">Python Programming</li>
+    <li class="course">Data Science</li>
+    <li class="course">Machine Learning</li>
+</ul>
+
+<script src="searchcourses.js"></script>
+
+</body>
+</html>

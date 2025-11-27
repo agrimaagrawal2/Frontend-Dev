@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Page Greeting</title>
+
+    <!-- CSS inside HTML -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 80px;
+            background: #f4f4f9;
+        }
+
+        h1 {
+            cursor: pointer;
+            color: darkblue;
+        }
+
+        #welcomeMessage {
+            font-size: 18px;
+            margin: 15px;
+            color: green;
+        }
+
+        button {
+            padding: 10px 14px;
+            margin: 8px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="greeting">Hello!</h1>
+    <p id="welcomeMessage">Welcome to our website! </p>
+
+    <button onclick="changeGreeting()">Change Greeting</button>
+    <button onclick="toggleMessage()">Toggle Welcome Message</button>
+
+    <!-- JS file link -->
+    <script src="welcomepage.js"></script>
+
+</body>
+</html>

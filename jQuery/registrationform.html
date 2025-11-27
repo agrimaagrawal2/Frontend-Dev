@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form Validation</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+        }
+
+        .container {
+            width: 350px;
+            margin: 80px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 95%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            background: #28a745;
+            color: white;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Register</h2>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <div id="nameError" class="error"></div>
+
+    <input type="email" id="email" placeholder="Email Address">
+    <div id="emailError" class="error"></div>
+
+    <input type="password" id="password" placeholder="Password">
+    <div id="passwordError" class="error"></div>
+
+    <button id="registerBtn">Register</button>
+
+    <div id="successMsg" class="success"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

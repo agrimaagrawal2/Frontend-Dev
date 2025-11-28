@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Search Products</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+        .loading {
+            display: none;
+            margin-left: 10px;
+            font-style: italic;
+            color: gray;
+        }
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .product img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .no-products {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Live Product Search</h2>
+    <input type="text" id="search" placeholder="Search products...">
+    <span class="loading">Loading...</span>
+
+    <div id="results"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#search").on("input", function() {
+                let query = $(this).val().trim();
+
+                $("#results").empty();
+
+                if(query.length === 0) {
+                    $(".loading").hide();
+                    return;
+                }
+
+                $(".loading").show();
+
+                $.ajax({
+                    url: "http://localhost:3000/products?q=" + query,
+                    method: "GET",
+                    success: function(data) {
+                        $(".loading").hide();
+
+                        if(data.length === 0) {
+                            $("#results").html('<div class="no-products">No products found</div>');
+                        } else {
+                            data.forEach(product => {
+                                $("#results").append(`
+                                    <div class="product">
+                                        <img src="${product.image}" alt="${product.name}">
+                                        <div>
+                                            <div><strong>${product.name}</strong></div>
+                                            <div>Price: $${product.price}</div>
+                                        </div>
+                                    </div>
+                                `);
+                            });
+                        }
+                    },
+                    error: function() {
+                        $(".loading").hide();
+                        $("#results").html('<div class="no-products">Error fetching products</div>');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

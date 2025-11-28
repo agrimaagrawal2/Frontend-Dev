@@ -1,0 +1,20 @@
+{
+  "users": [
+    { "id": 1, "name": "Alice" },
+    { "id": 2, "name": "Bob" },
+    { "id": 3, "name": "Charlie" },
+    { "id": 4, "name": "David" }
+  ],
+  "orders": [
+    { "id": 1, "product": "Laptop", "userId": 1 },
+    { "id": 2, "product": "Phone", "userId": 2 },
+    { "id": 3, "product": "Headphones", "userId": 1 }
+  ],
+  "products": [
+    { "id": 1, "name": "Laptop" },
+    { "id": 2, "name": "Phone" },
+    { "id": 3, "name": "Headphones" },
+    { "id": 4, "name": "Mouse" },
+    { "id": 5, "name": "Keyboard" }
+  ]
+}

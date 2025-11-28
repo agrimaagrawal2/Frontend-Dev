@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Apple iPhone 14",
+      "price": 999,
+      "image": "https://via.placeholder.com/50x50?text=iPhone+14"
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy S23",
+      "price": 899,
+      "image": "https://via.placeholder.com/50x50?text=Galaxy+S23"
+    },
+    {
+      "id": 3,
+      "name": "Sony WH-1000XM5 Headphones",
+      "price": 350,
+      "image": "https://via.placeholder.com/50x50?text=Sony+Headphones"
+    },
+    {
+      "id": 4,
+      "name": "Dell XPS 13 Laptop",
+      "price": 1200,
+      "image": "https://via.placeholder.com/50x50?text=Dell+XPS+13"
+    },
+    {
+      "id": 5,
+      "name": "Apple MacBook Air M2",
+      "price": 1300,
+      "image": "https://via.placeholder.com/50x50?text=MacBook+Air"
+    }
+  ]
+}

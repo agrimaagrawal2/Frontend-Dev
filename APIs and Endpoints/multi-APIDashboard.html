@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-API Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      padding: 20px;
+    }
+    .dashboard {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .title {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .count {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .skeleton {
+      height: 28px;
+      background: #ddd;
+      border-radius: 5px;
+      animation: pulse 1.5s infinite;
+      margin-top: 10px;
+    }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.4; }
+      100% { opacity: 1; }
+    }
+    .warning {
+      color: red;
+      text-align: center;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Multi-API Dashboard</h1>
+
+  <div class="dashboard">
+    <div class="card" id="users-card">
+      <div class="title">Total Users</div>
+      <div class="count skeleton"></div>
+    </div>
+    <div class="card" id="orders-card">
+      <div class="title">Total Orders</div>
+      <div class="count skeleton"></div>
+    </div>
+    <div class="card" id="products-card">
+      <div class="title">Total Products</div>
+      <div class="count skeleton"></div>
+    </div>
+  </div>
+
+  <div class="warning" id="warning" style="display:none;">
+    Some data could not be loaded.
+  </div>
+
+  <script>
+    const API_URL = "http://localhost:3000";
+
+    function fetchData(endpoint) {
+      return fetch(`${API_URL}/${endpoint}`)
+        .then(response => {
+          if (!response.ok) throw new Error("Network response was not ok");
+          return response.json();
+        });
+    }
+
+    function updateCard(id, count) {
+      const card = document.querySelector(`#${id} .count`);
+      card.textContent = count;
+      card.classList.remove("skeleton");
+    }
+
+    function showWarning() {
+      document.getElementById("warning").style.display = "block";
+    }
+
+    // Fetch all endpoints simultaneously
+    Promise.allSettled([
+      fetchData("users"),
+      fetchData("orders"),
+      fetchData("products")
+    ])
+    .then(results => {
+      results.forEach((result, index) => {
+        if (result.status === "fulfilled") {
+          switch(index) {
+            case 0: updateCard("users-card", result.value.length); break;
+            case 1: updateCard("orders-card", result.value.length); break;
+            case 2: updateCard("products-card", result.value.length); break;
+          }
+        } else {
+          showWarning();
+        }
+      });
+    })
+    .catch(() => showWarning());
+  </script>
+</body>
+</html>

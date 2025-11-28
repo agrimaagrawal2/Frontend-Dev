@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Status Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .toggle {
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Employee Status Dashboard</h2>
+    <div id="error" class="error"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTable">
+            <!-- Employees will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        const apiUrl = "http://localhost:3000/employees";
+
+        // Fetch all employees
+        function fetchEmployees() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", apiUrl, true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    const employees = JSON.parse(xhr.responseText);
+                    renderEmployees(employees);
+                } else {
+                    showError("Failed to fetch employees");
+                }
+            };
+            xhr.onerror = function() {
+                showError("Network error while fetching employees");
+            };
+            xhr.send();
+        }
+
+        // Render employees in table
+        function renderEmployees(employees) {
+            const tbody = document.getElementById("employeeTable");
+            tbody.innerHTML = "";
+
+            employees.forEach(emp => {
+                const tr = document.createElement("tr");
+
+                const nameTd = document.createElement("td");
+                nameTd.textContent = emp.name;
+
+                const statusTd = document.createElement("td");
+                const toggle = document.createElement("input");
+                toggle.type = "checkbox";
+                toggle.checked = emp.status === "active";
+                toggle.className = "toggle";
+                toggle.addEventListener("change", function() {
+                    updateStatus(emp.id, toggle.checked, toggle);
+                });
+                statusTd.appendChild(toggle);
+                statusTd.appendChild(document.createTextNode(toggle.checked ? " Active" : " Inactive"));
+
+                tr.appendChild(nameTd);
+                tr.appendChild(statusTd);
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Update employee status
+        function updateStatus(id, isActive, toggleElement) {
+            const newStatus = isActive ? "active" : "inactive";
+            const originalStatus = !isActive ? "active" : "inactive"; // for rollback
+
+            // Update UI immediately
+            toggleElement.nextSibling.textContent = " " + newStatus;
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("PATCH", apiUrl + "/" + id, true);
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // Success, do nothing
+                } else {
+                    rollback();
+                }
+            };
+            xhr.onerror = function() {
+                rollback();
+            };
+            xhr.send(JSON.stringify({ status: newStatus }));
+
+            function rollback() {
+                toggleElement.checked = !isActive;
+                toggleElement.nextSibling.textContent = " " + originalStatus;
+                showError("Failed to update status for employee ID " + id);
+            }
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById("error");
+            errorDiv.textContent = message;
+            setTimeout(() => errorDiv.textContent = "", 3000);
+        }
+
+        // Initial fetch
+        fetchEmployees();
+    </script>
+</body>
+</html>
